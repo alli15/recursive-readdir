@@ -23,7 +23,7 @@ function readdir(path, ignores, callback) {
 
     var ignoreOpts = {matchBase: true}
     files.forEach(function (file) {
-      fs.lstat(p.join(path, file), function (err, stats) {
+      fs.stat(p.join(path, file), function (err, stats) {
         if (err) {
           return callback(err)
         }
